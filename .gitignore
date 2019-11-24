@@ -1,5 +1,5 @@
-# Created by https://www.gitignore.io/api/c,c++,platformio,sublimetext,jetbrains+all,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=c,c++,platformio,sublimetext,jetbrains+all,visualstudiocode
+# Created by https://www.gitignore.io/api/c,c++,cmake,platformio,sublimetext,jetbrains+all,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=c,c++,cmake,platformio,sublimetext,jetbrains+all,visualstudiocode
 
 ### C ###
 # Prerequisites
@@ -73,6 +73,24 @@ dkms.conf
 *.lai
 
 # Executables
+
+### CMake ###
+CMakeListsPrivate.txt
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+# External projects
+*-prefix/
 
 ### JetBrains+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
@@ -210,4 +228,4 @@ GitHub.sublime-settings
 # Ignore all local history of files
 .history
 
-# End of https://www.gitignore.io/api/c,c++,platformio,sublimetext,jetbrains+all,visualstudiocode
+# End of https://www.gitignore.io/api/c,c++,cmake,platformio,sublimetext,jetbrains+all,visualstudiocode
