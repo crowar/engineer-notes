@@ -16,6 +16,8 @@ Arduino - это открытая аппаратно-программный пл
 * [Макетка](https://ru.aliexpress.com/item/32432740751.html?spm=a2g0o.productlist.0.0.d7b03000rVbFVh&algo_pvid=57930d87-1770-4d50-b1e0-da343cefe770&algo_expid=57930d87-1770-4d50-b1e0-da343cefe770-5&btsid=af2fac3e-e736-42c9-8435-5fbc0623bc91&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_52)
 * [Проводки разного вида](https://ru.aliexpress.com/item/32662824675.html?spm=a2g0o.productlist.0.0.d7b03000rVbFVh&algo_pvid=57930d87-1770-4d50-b1e0-da343cefe770&algo_expid=57930d87-1770-4d50-b1e0-da343cefe770-2&btsid=af2fac3e-e736-42c9-8435-5fbc0623bc91&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_52)
 
+## Arduino IDE
+
 Далее требуется [скачать](https://www.arduino.cc/en/Main/Software) среду разработки Arduino IDE
 
 ![Arduino IDE](../img/00/arduino-ide.png)
@@ -24,6 +26,10 @@ Arduino - это открытая аппаратно-программный пл
 
 Для загрузки скетча на плату, требуется указать тип платы ```Tools -> Board -> Arduino UNO``` (либо другая в зависимости от платы которая есть у вас), далее требуется указать на каком порту подключена плата это можно сделать ```Tools -> Port -> COM_N```. 
 После загрузки данного скетча на плату (```Sketch -> Upload```) на плате начнет мигать светодиод с промежутком в одну секунду.
+
+## PlatformIO
+
+По работе со средой platformio есть отличная документация на [официальном сайте](https://platformio.org/install/ide?install=vscode)
 
 ## Заметки
 
