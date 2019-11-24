@@ -30,7 +30,7 @@
 
 Схема подключения датчика с резистором:
 
-![Arduino IDE](../img/01/termometer-breadboard-view.png)
+![Схема подключения](../img/01/termometer-breadboard-view.png)
 
 После подключения и соединения всех элементов нужно написать немного кода. 
 
