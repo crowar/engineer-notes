@@ -15,7 +15,6 @@
 В этом коде добавилось только условие, на которое будет реагировать наше реле.
 
 ```cpp
-
 const int RelayPin = 4;
 const int LightSensorPin = A0;
 
