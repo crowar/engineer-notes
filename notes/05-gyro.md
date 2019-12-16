@@ -125,7 +125,7 @@ void loop() {
         //Lets go back and wait for another interrupt.
         // We shouldn't be here, we got an interrupt from another event
         // This is blocking so don't do it while (fifoCount < packetSize) fifoCount = mpu.getFIFOCount();
-	}
+    }
     // check for overflow (this should never happen unless our code is too inefficient)
     else if ((mpuIntStatus & _BV(MPU6050_INTERRUPT_FIFO_OFLOW_BIT)) || fifoCount >= 1024) {
         // reset so we can continue cleanly
@@ -160,7 +160,7 @@ void loop() {
 
 Данный код будет выводить три основных показателя: крен, рысканье и тангаж.
 
-Немного описания, что есть что:
+Немного картинок, что есть что:
 
 Крен (roll):
 ![roll](https://upload.wikimedia.org/wikipedia/commons/c/cc/Aileron_roll.gif)
@@ -170,3 +170,18 @@ void loop() {
 
 Тангаж (pitch)
 ![pitch](https://upload.wikimedia.org/wikipedia/commons/e/ec/Aileron_pitch.gif)
+
+Цельная картина
+![Flight dynamics with text ortho](https://upload.wikimedia.org/wikipedia/commons/0/04/Flight_dynamics_with_text_ortho.svg)
+
+> Все картинки честно взяты с википедии.
+
+## Идеи применения
+
+Очень часто этот датчик используется в авиомоделировании (для тех кто не понял по картинкам). Для автоматического выравнивания модели в воздухе.
+
+Так же можно сделать бота на 2х колесиках который будет балансировать.
+
+Можно придумать ещё много всего где нужно изменять положение в пространстве.
+
+> При использовании этого датчика с платой Arduino Leonardo можно получить внешнее устройство для компьютера.
