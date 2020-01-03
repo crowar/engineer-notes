@@ -3,18 +3,18 @@
 ## Необходимые элементв
 
 * Часы реального времени (RTC). Вариаций датчиков очень много
-  * [DS1302](https://ru.aliexpress.com/item/32861729429.html)
-  * [DS1307](https://ru.aliexpress.com/item/32443265169.html)
-  * [DS3231](https://ru.aliexpress.com/item/32666603579.html)
-  * [DS3231](https://ru.aliexpress.com/item/1954150922.html) в компактном корпусе
-  * [Arduino Nano Shield](https://ru.aliexpress.com/item/32845808016.html) с датчиком DS1307 и адаптером SD карт
-  * [PCF8523](https://ru.aliexpress.com/item/33014387417.html)
+* [DS1302](https://ru.aliexpress.com/item/32861729429.html)
+* [DS1307](https://ru.aliexpress.com/item/32443265169.html)
+* [DS3231](https://ru.aliexpress.com/item/32666603579.html)
+* [DS3231](https://ru.aliexpress.com/item/1954150922.html) в компактном корпусе
+* [Arduino Nano Shield](https://ru.aliexpress.com/item/32845808016.html) с датчиком DS1307 и адаптером SD карт
+* [PCF8523](https://ru.aliexpress.com/item/33014387417.html)
 
-Основные отличия этих датчиков: температурный диапазон, скорость отстования, рабочее напряжение. Более детально можно посмотреть в описании чипов: [DS1302](https://datasheets.maximintegrated.com/en/ds/DS1302.pdf), [DS1307](https://datasheets.maximintegrated.com/en/ds/DS1307.pdf), [DS3231](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf). Другие документы найдети самостоятельно
+Основные отличия этих датчиков: температурный диапазон, скорость отставания, рабочее напряжение. Более детально можно посмотреть в описании чипов: [DS1302](https://datasheets.maximintegrated.com/en/ds/DS1302.pdf), [DS1307](https://datasheets.maximintegrated.com/en/ds/DS1307.pdf), [DS3231](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf). Другие документы найдите самостоятельно
 
 ## Схема подключения
 
-Схема подключения через шину I2C, уже расматривалась ранее.
+Схема подключения через шину I2C, уже рассматривалась ранее.
 
 ![rtc-schema](../img/07/rtc.png)
 
@@ -35,48 +35,48 @@ String formatDateTime(tmElements_t &datetime);
 String formatValue(unsigned int nn);
 
 void setup() {
-    Serial.begin(9600);
+Serial.begin(9600);
 }
 
 void loop() {
-    if (RTC.read(datetime)) {
-        Serial.println(formatDateTime(datetime));
-    } else {
-        Serial.println("error");
-    }
+if (RTC.read(datetime)) {
+Serial.println(formatDateTime(datetime));
+} else {
+Serial.println("error");
+}
 }
 
 String formatDateTime(tmElements_t &datetime){
-    String result = "";
+String result = "";
 
-    result += formatValue(datetime.Hour);
-    result += ":";
-    result += formatValue(datetime.Minute);
-    result += ":";
-    result += formatValue(datetime.Second);
-    result += " ";
-    result += formatValue(datetime.Day);
-    result += ".";
-    result += formatValue(datetime.Month);
-    result += ".";
-    result += formatValue(tmYearToCalendar(datetime.Year));
+result += formatValue(datetime.Hour);
+result += ":";
+result += formatValue(datetime.Minute);
+result += ":";
+result += formatValue(datetime.Second);
+result += " ";
+result += formatValue(datetime.Day);
+result += ".";
+result += formatValue(datetime.Month);
+result += ".";
+result += formatValue(tmYearToCalendar(datetime.Year));
 
-    return result;
+return result;
 }
 
 String formatValue(unsigned int nn) {
-    String result = "";
+String result = "";
 
-    if (nn >= 0 && nn < 10)
-        result += "0";
+if (nn >= 0 && nn < 10)
+result += "0";
 
-    result += String(nn);
+result += String(nn);
 
-    return result;
+return result;
 }
 ```
 
-Чаще всего новый датчик показывает неверное время и нужно указать то время которое нам требуется. Потредуется доработать код и начать получать время с Serial Monitor.
+Чаще всего новый датчик показывает неверное время и нужно указать то время которое нам требуется. Потребуется доработать код и начать получать время с Serial Monitor.
 
 ```cpp
 #include <Wire.h>
@@ -91,80 +91,80 @@ String formatDateTime(tmElements_t &datetime);
 String formatValue(unsigned int nn);
 
 void setup() {
-    Serial.begin(9600);
+Serial.begin(9600);
 }
 
 void loop() {
-    if (strFull) {
-        // Порсим строку и вытаемся получить из неё необходимые значения
-        dateTime.Hour = dateTimeStr.substring(11,13).toInt();
-        dateTime.Minute = dateTimeStr.substring(14,16).toInt();
-        dateTime.Second = dateTimeStr.substring(17,19).toInt();
-        dateTime.Day = dateTimeStr.substring(0,2).toInt();
-        dateTime.Month = dateTimeStr.substring(3,5).toInt();
-        dateTime.Year = CalendarYrToTm(dateTimeStr.substring(6,10).toInt());
+if (strFull) {
+// Порсим строку и вытаемся получить из неё необходимые значения
+dateTime.Hour = dateTimeStr.substring(11,13).toInt();
+dateTime.Minute = dateTimeStr.substring(14,16).toInt();
+dateTime.Second = dateTimeStr.substring(17,19).toInt();
+dateTime.Day = dateTimeStr.substring(0,2).toInt();
+dateTime.Month = dateTimeStr.substring(3,5).toInt();
+dateTime.Year = CalendarYrToTm(dateTimeStr.substring(6,10).toInt());
 
-        // запишем данные в DS3231
-        RTC.write(datetime);
+// запишем данные в DS3231
+RTC.write(datetime);
 
-        // очистить строку
-        dateTimeStr = "";
-        strFull = false;
-    }
+// очистить строку
+dateTimeStr = "";
+strFull = false;
+}
 
-    // получение данных из ds3231
-    if (RTC.read(datetime)) {
-        Serial.println(formatDateTime(datetime));
-    } else {
-        Serial.println("error");
-    }
+// получение данных из ds3231
+if (RTC.read(datetime)) {
+Serial.println(formatDateTime(datetime));
+} else {
+Serial.println("error");
+}
 
-    delay(500);
+delay(500);
 }
 
 void serialEvent() {
-    while (Serial.available()) {
-        // получить очередной байт:
-        char c = (char)Serial.read();
+while (Serial.available()) {
+// получить очередной байт:
+char c = (char)Serial.read();
 
-        // добавить в строку
-        dateTimeStr += c;
+// добавить в строку
+dateTimeStr += c;
 
-        // /n - конец передачи
-        if (c == '\n')
-        {
-            strFull = true;
-        }
-    }
+// /n - конец передачи
+if (c == '\n')
+{
+strFull = true;
+}
+}
 }
 
 String formatDateTime(tmElements_t &datetime){
-    String result = "";
+String result = "";
 
-    result += formatValue(datetime.Hour);
-    result += ":";
-    result += formatValue(datetime.Minute);
-    result += ":";
-    result += formatValue(datetime.Second);
-    result += " ";
-    result += formatValue(datetime.Day);
-    result += ".";
-    result += formatValue(datetime.Month);
-    result += ".";
-    result += formatValue(tmYearToCalendar(datetime.Year));
+result += formatValue(datetime.Hour);
+result += ":";
+result += formatValue(datetime.Minute);
+result += ":";
+result += formatValue(datetime.Second);
+result += " ";
+result += formatValue(datetime.Day);
+result += ".";
+result += formatValue(datetime.Month);
+result += ".";
+result += formatValue(tmYearToCalendar(datetime.Year));
 
-    return result;
+return result;
 }
 
 String formatValue(unsigned int nn) {
-    String result = "";
+String result = "";
 
-    if (nn >= 0 && nn < 10)
-        result += "0";
+if (nn >= 0 && nn < 10)
+result += "0";
 
-    result += String(nn);
+result += String(nn);
 
-    return result;
+return result;
 }
 ```
 
@@ -172,7 +172,7 @@ String formatValue(unsigned int nn) {
 
 ## Вывод на дисплей
 
-После того как мы разобрались как получать и устанавливать время осталось только вывести его на дисплей. Как подключать дисплей мы расматривали ранее когда [получали температуру](01p2-Thermometer-4d7s.md).
+После того как мы разобрались как получать и устанавливать время осталось только вывести его на дисплей. Как подключать дисплей мы рассматривали ранее когда [получали температуру](01p2-Thermometer-4d7s.md).
 
 ```cpp
 #include <Wire.h>
@@ -218,7 +218,6 @@ void loop() {
     }
 
     if (RTC.read(dateTime)) {
-
         ListTime[0] = dateTime.Hour/10;
         ListTime[1] = dateTime.Hour%10;
         ListTime[2] = dateTime.Minute/10;

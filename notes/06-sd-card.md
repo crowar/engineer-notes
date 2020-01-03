@@ -16,16 +16,16 @@
 * **SCLK**: SCK, CLK, SPC (SPI serial port clock);
 * **SS**: nCS, CS, CSB, CSN, nSS, STE, SYNC.
 
-> Для желающих понять что это за шина и как она работатет, то есть отличная [лекция](https://www.youtube.com/watch?v=85Lhi_824ks&t=67s) в которой рассказывается как работает SPI и для чего нужны все эти провода
+> Для желающих понять что это за шина и как она работает, то есть отличная [лекция](https://www.youtube.com/watch?v=85Lhi_824ks&t=67s) в которой рассказывается как работает SPI и для чего нужны все эти провода
 
 ## Необходимые элементы
 
 * [MicroSD card adapter](https://www.aliexpress.com/item/32583289463.html)
 * Часто MicroSD card adapter встречается на полноценных модулях к примеру на [Ethernet Shield](https://www.aliexpress.com/item/32549379444.html)
 * Либо он уже есть на борту некоторых плат:
-  * [Arduino YÚN rev 2](https://store.arduino.cc/usa/arduino-yun-rev-2)
-  * [Arduino Ethernet](https://store.arduino.cc/usa/arduino-ethernet-rev3-with-poe)
-  * [Netduino 3 Ethernet/WiFi](https://www.wildernesslabs.co/netduino), скоро ожидается 4е поколение плат и можно писать код на dotnet core
+* [Arduino YÚN rev 2](https://store.arduino.cc/usa/arduino-yun-rev-2)
+* [Arduino Ethernet](https://store.arduino.cc/usa/arduino-ethernet-rev3-with-poe)
+* [Netduino 3 Ethernet/WiFi](https://www.wildernesslabs.co/netduino), скоро ожидается 4е поколение плат и можно писать код на dotnet core
 
 ## Схема подключения
 
@@ -44,7 +44,7 @@
 
 ## Написание кода
 
-Подключаемые библиотеки уже имеются и доплнительно их устанавливать никак не требуется.
+Подключаемые библиотеки уже имеются и дополнительно их устанавливать никак не требуется.
 
 ```cpp
 #include <SPI.h>
@@ -68,9 +68,9 @@ void setup(){
   }
 
   if(SD.exists(fileName)){
-    Serial.println("=> file exist");
+  Serial.println("=> file exist");
   }else{
-    Serial.println("=> file doesn't exist");
+  Serial.println("=> file doesn't exist");
   }
 
   file = SD.open(fileName, FILE_WRITE);
@@ -86,21 +86,21 @@ void loop(){
 }
 ```
 
-> Я использовал карту на 1 Gb, перед работай форматнул в FAT32.
+> Я использовал карту на 1 Gb, перед работай отформатировал в FAT32.
 
-Если кто думает о работе с файлами как о способе хранения информации, то для этого есть великолепная структура ```JSON```. [Библиотека](https://github.com/bblanchon/ArduinoJson) по работе уже созжана и велосипед изобретать не надо.
+Если кто думает о работе с файлами как о способе хранения информации, то для этого есть великолепная структура ```JSON```. [Библиотека](https://github.com/bblanchon/ArduinoJson) по работе уже создана и велосипед изобретать не надо.
 
 ```cpp
-    #include <ArduinoJson.h>
+#include <ArduinoJson.h>
 
-    void ReadDataFromJson(String jsonLine){
-        DynamicJsonBuffer jsonBuffer;
-        JsonObject& rp = jsonBuffer.parseObject(jsonLine);
+void ReadDataFromJson(String jsonLine){
+  DynamicJsonBuffer jsonBuffer;
+  JsonObject& rp = jsonBuffer.parseObject(jsonLine);
 
-        if (rp.success())
-        {
-        String strColor = rp["StringParam"];
-        int interval = rp["IntParam"];
-        }
-    }
+  if (rp.success())
+  {
+    String strColor = rp["StringParam"];
+    int interval = rp["IntParam"];
+  }
+}
 ```

@@ -2,21 +2,21 @@
 
 ## Необходимые элементы
 
-* [MPU-6050](https://www.aliexpress.com/item/32527828492.html) рабочее напряжение датчика 3 - 5V. Этот датчек может маркироваться как GY-541
+* [MPU-6050](https://www.aliexpress.com/item/32527828492.html) рабочее напряжение датчика 3 - 5V. Этот датчик может маркироваться как GY-541
 * [SparkFun - MPU-6050](https://www.sparkfun.com/products/11028) рабочее напряжение датчика 2.3 - 3.4V
 * [GY-80](https://www.aliexpress.com/item/32787517636.html) этот датчик помимо акселерометра и гироскопа на борту имеет компас и датчик давления
 * [GY-LSM6DS3](https://www.aliexpress.com/item/32839272499.html) датчик ещё может изменять температуру
-* [GY-91](https://www.aliexpress.com/item/33023942649.html) датчик может измерять все. В нем имеется акселерометр, гироском, барометр и термоментр
+* [GY-91](https://www.aliexpress.com/item/33023942649.html) датчик может измерять все. В нем имеется акселерометр, гироскоп, барометр и термометр
 
 > Для желающих собрать какую-то машинку, коптер или ещё какую технику уже есть готовая плата [ArduPilot](https://www.aliexpress.com/item/32891728823.html) которая на борту уже имеет гироскоп MPU-6000 и барометр MS5611. Компас и GPS к сожалению отсутствует на данной плате, но их можно подключить при такой необходимости.
 
 ## Схема подключения
 
-Датчик MPU-6050 подключается по I2C порту (ранее мы уже подключали [дисплей по I2C порту](01p3-Termometer-i2c-lcd.md)). При подключении надо точно быть увеременным от скольки вольт питается данная плата. Часто встречаются платы работающие от 3.3V. Конкретно эта плата может работать от 3 до 5V. Поэтому если в схеме будет всплеск напряжения, то волшебный дым на котором работает вся электронника может выйти. При желании можно красный провод подключить к 3.3V.
+Датчик MPU-6050 подключается по I2C порту (ранее мы уже подключали [дисплей по I2C порту](01p3-Termometer-i2c-lcd.md)). При подключении надо точно быть уверенным от какого напряжение питается плата и подавать необходимое напряжение. Часто встречаются платы работающие от 3.3V. Конкретно эта плата может работать от 3 до 5V. Поэтому если в схеме будет всплеск напряжения, то волшебный дым на котором работает вся электроника может выйти. При желании можно красный провод подключить к 3.3V.
 
 ![gyro](../img/05/gyro.png)
 
-При желании мы так же можем подключить и дисклей так же по порту I2C. Так как устройства имеют разные адреса, то можно подключить и дисплей или друние датчики работающие через I2C.
+При желании мы так же можем подключить и дисплей так же по порту I2C. Так как устройства имеют разные адреса, то можно подключить и дисплей или другие датчики работающие через I2C.
 
 ## Написание кода
 
@@ -31,17 +31,17 @@ MPU6050 mpu(0x68);
 #define INTERRUPT_PIN 2
 
 // MPU control/status vars
-bool dmpReady = false;          // set true if DMP init was successful
-uint8_t mpuIntStatus;           // holds actual interrupt status byte from MPU
-uint8_t dmpInitializeStatus;    // return status after each device operation (0 = success, !0 = error)
-uint16_t packetSize;            // expected DMP packet size (default is 42 bytes)
-uint16_t fifoCount;             // count of all bytes currently in FIFO
-uint8_t fifoBuffer[64];         // FIFO storage buffer
+bool dmpReady = false; // set true if DMP init was successful
+uint8_t mpuIntStatus; // holds actual interrupt status byte from MPU
+uint8_t dmpInitializeStatus; // return status after each device operation (0 = success, !0 = error)
+uint16_t packetSize; // expected DMP packet size (default is 42 bytes)
+uint16_t fifoCount; // count of all bytes currently in FIFO
+uint8_t fifoBuffer[64]; // FIFO storage buffer
 
 // orientation/motion vars
 Quaternion quaternionContainer; // quaternion container
-VectorFloat gravity;            // gravity vector
-float ypr[3];                   // yaw/pitch/roll container and gravity vector
+VectorFloat gravity; // gravity vector
+float ypr[3]; // yaw/pitch/roll container and gravity vector
 
 int32_t temperature;
 
@@ -52,7 +52,7 @@ void dmpDataReady() {
 
 void setup() {
     Wire.begin();
-    Wire.setClock(400000);  // 400kHz I2C clock.
+    Wire.setClock(400000); // 400kHz I2C clock.
 
     Serial.begin(9600);
 
@@ -110,9 +110,9 @@ void loop() {
     // wait for MPU interrupt or extra packet(s) available
     while (!mpuInterrupt && fifoCount < packetSize) {
         if (mpuInterrupt && fifoCount < packetSize) {
-          // try to get out of the infinite loop
-          fifoCount = mpu.getFIFOCount();
-        }  
+        // try to get out of the infinite loop
+            fifoCount = mpu.getFIFOCount();
+        }
     }
 
     // reset interrupt flag and get INT_STATUS byte
@@ -137,23 +137,23 @@ void loop() {
 
         // read a packet from FIFO
         while(fifoCount >= packetSize){ // Lets catch up to NOW, someone is using the dreaded delay()!
-            mpu.getFIFOBytes(fifoBuffer, packetSize);
-            // track FIFO count here in case there is > 1 packet available
-            // (this lets us immediately read more without waiting for an interrupt)
-            fifoCount -= packetSize;
-        }
+        mpu.getFIFOBytes(fifoBuffer, packetSize);
+        // track FIFO count here in case there is > 1 packet available
+        // (this lets us immediately read more without waiting for an interrupt)
+        fifoCount -= packetSize;
+    }
 
-        // display Euler angles in degrees
-        mpu.dmpGetQuaternion(&quaternionContainer, fifoBuffer);
-        mpu.dmpGetGravity(&gravity, &quaternionContainer);
-        mpu.dmpGetYawPitchRoll(ypr, &quaternionContainer, &gravity);
+    // display Euler angles in degrees
+    mpu.dmpGetQuaternion(&quaternionContainer, fifoBuffer);
+    mpu.dmpGetGravity(&gravity, &quaternionContainer);
+    mpu.dmpGetYawPitchRoll(ypr, &quaternionContainer, &gravity);
 
-        Serial.print("Yaw: ");
-        Serial.print(ypr[0] * 180/M_PI);
-        Serial.print("\tPitch: ");
-        Serial.print(ypr[1] * 180/M_PI);
-        Serial.print("\tRoll: ");
-        Serial.println(ypr[2] * 180/M_PI);
+    Serial.print("Yaw: ");
+    Serial.print(ypr[0] * 180/M_PI);
+    Serial.print("\tPitch: ");
+    Serial.print(ypr[1] * 180/M_PI);
+    Serial.print("\tRoll: ");
+    Serial.println(ypr[2] * 180/M_PI);
     }
 }
 ```
@@ -182,4 +182,4 @@ void loop() {
 
 > При использовании этого датчика с платой Arduino Leonardo можно получить внешнее устройство для компьютера.
 
-Если нет желания покупать россыпь датчиков и думать как все объеденить, то уже все придумали и выпустили плату [Arduino Nano 33 BLE Sense](https://store.arduino.cc/usa/nano-33-ble-sense-with-headers). На данной плате уже имеется: акселерометр, гироскоп, компас, микрофон, датчик освещенности и цвета, барометр, датчик влажности и температуры. В довесок ко всему этому на плате имеется bluetooth версии 5.0 и серцем платы является ARM® Cortex®-M4 32-битный процессор работающий на частоте 64 MHz
+Если нет желания покупать россыпь датчиков и думать как все объединить, то уже все придумали и выпустили плату [Arduino Nano 33 BLE Sense](https://store.arduino.cc/usa/nano-33-ble-sense-with-headers). На данной плате уже имеется: акселерометр, гироскоп, компас, микрофон, датчик освещенности и цвета, барометр, датчик влажности и температуры. В довесок ко всему этому на плате имеется bluetooth версии 5.0 и сердцем платы является ARM® Cortex®-M4 32-битный процессор работающий на частоте 64 MHz

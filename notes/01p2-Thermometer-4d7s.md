@@ -1,4 +1,4 @@
-# Грудусник с дисплеем
+# Градусник с дисплеем
 
 ## Нужные элементы
 
@@ -10,13 +10,13 @@
 
 Дисплей:
 
-* [4х бинтый семисегментный дисплей](https://ru.aliexpress.com/item/1969258031.html)
+* [4х битный семи сегментный дисплей](https://ru.aliexpress.com/item/1969258031.html)
 
 ## Схема подключения
 
 Как работать с датчиками DHT-NN разбирались в [статье чуть ранее](01-Thermometer.md).
 
-Для подлючения дисплея требуется задействовать ещё 2 пина.
+Для подключения дисплея требуется задействовать ещё 2 пина.
 
 Схема подключения датчика и дисплея:
 
@@ -28,7 +28,7 @@
 
 ```ini
 lib_deps =
-    https://github.com/avishorp/TM1637.git
+  https://github.com/avishorp/TM1637.git
 ```
 
 Теперь пришло время доработать наш код и добавить отображение температуры на дисплей
@@ -55,20 +55,20 @@ void setSegmentsFormatTemperature(int num);
 
 // Реализуем функцию по форматированию числа в температуру, для красивого отображения
 void setSegmentsFormatTemperature(int num) {
-    uint8_t data[] = {0x00, 0x00, 0x63, 0x39};
+  uint8_t data[] = {0x00, 0x00, 0x63, 0x39};
 
-    for (int i = 1; i >= 0; --i) {
-        uint8_t digit = num % 10;
+  for (int i = 1; i >= 0; --i) {
+    uint8_t digit = num % 10;
 
-        if (digit == 0 && num == 0)
-            data[i] = 0;
-        else
-            data[i] = display.encodeDigit(digit);
+    if (digit == 0 && num == 0)
+    data[i] = 0;
+    else
+    data[i] = display.encodeDigit(digit);
 
-        num /= 10;
-    }
+    num /= 10;
+  }
 
-    display.setSegments(data);
+  display.setSegments(data);
 }
 
 void setup() {
@@ -82,10 +82,8 @@ void setup() {
 
 void loop() {
   delay(2000);
-  
   float h = dht.readHumidity();
   float t = dht.readTemperature();
-  
   if (isnan(h) || isnan(t)) {
     Serial.println("Не удается считать показания");
     return;
@@ -93,7 +91,6 @@ void loop() {
 
   //Выведем полученное значение температуры на наш дисплей
   setSegmentsFormatTemperature((int) t);
-  
   Serial.print("Влажность: ");
   Serial.print(h);
   Serial.print("%\tТемпература: ");
@@ -102,7 +99,7 @@ void loop() {
 }
 ```
 
-Загрушаем нашу поделку на плату и радуемся тому как работает наш градусник.
+Загружаем нашу поделку на плату и радуемся тому как работает наш градусник.
 У меня получилось это как то так
 
 ![Termometer photo with 7segment](../img/01/termometer-photo.jpg)
