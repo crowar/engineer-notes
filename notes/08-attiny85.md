@@ -2,7 +2,7 @@
 
 ## Необходимые элементы
 
-* [Attiny85](https://aliexpress.ru/item/4000059212852.html?spm=a2g0o.productlist.0.0.7b4c2815UUfJG9&algo_pvid=cb164c26-8d08-48cc-a1c8-dbbc4074c552&algo_expid=cb164c26-8d08-48cc-a1c8-dbbc4074c552-7&btsid=2934d9bb-818a-42c7-8802-72694601d6e0&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
+* [Attiny85](https://aliexpress.ru/item/4000059212852.html)
 
 При желании можно использовать Attiny25 или Attiny45.
 
@@ -17,9 +17,21 @@
 
 ![Attiny85 termometer](../img/08/Attiny85.png)
 
+## Добавление в среду разработки
+
+При работе в среде platformio уже все есть и дополнительно чего то делать не требуется.
+
+Но если используется среда Arduino IDE, то следуется зайти ```File > Preferences``` и в строке ```Additional Boards Manager URLs``` добавить ссылку.
+
+```https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json```
+
+После этого можно зайти в менеджер плат и добавить Attiny85. После этого контроллер станет доступным для выбора.
+
 ## Написание кода
 
 Код ничем не отличается и смело можно переносить проекты на данный чип.
+
+Полная версия кода расположенна в директории ```src/08-attiny85```
 
 ```cpp
 #include "OneWire.h"
@@ -80,3 +92,14 @@ void loop(){
 ![Attiny85 термометр тест работы](../img/08/attiny85-photo-2.jpg)
 
 Все работает как и планировали. При отсутствии дисплея можно значительно было бы понизить напряжение питания. На примере плата работает от 5V.
+
+## Digispark
+
+Ещё есть платы базирующиеся на Attiny85/Attiny167, к примеру:
+
+* [Digispark](https://aliexpress.ru/item/32584084654.html)
+* [Digispark Pro](https://aliexpress.ru/item/32617756621.html)
+
+На данных платах уже имеется регулятоп напряжения, на некоторых имеется внешний генератор тактовой частоты, что позволяет контроллеру работать на большей частоте.
+
+Вся необзодимая информация по подключению имеется на сайте [DigistumpArduino](https://github.com/digistump/DigistumpArduino)
