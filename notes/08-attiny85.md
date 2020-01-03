@@ -23,7 +23,9 @@
 
 Но если используется среда Arduino IDE, то следуется зайти ```File > Preferences``` и в строке ```Additional Boards Manager URLs``` добавить ссылку.
 
-```https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json```
+```
+https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json
+```
 
 После этого можно зайти в менеджер плат и добавить Attiny85. После этого контроллер станет доступным для выбора.
 
