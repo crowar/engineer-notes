@@ -4,9 +4,9 @@
 
 Датчики:
 
-* [DHT-11](https://www.aliexpress.com/item/33005500534.html?spm=a2g0o.productlist.0.0.64f25d39hXA0pY&algo_pvid=d4cc7b7e-71d9-4f4d-be1e-cd2dd71ed522&algo_expid=d4cc7b7e-71d9-4f4d-be1e-cd2dd71ed522-0&btsid=9f479f34-2398-411a-a638-03b82ab7107b&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_52)
-* [DHT-11 в готовом модуле](https://ru.aliexpress.com/item/1059518033.html?spm=a2g0o.productlist.0.0.64f25d39hXA0pY&algo_pvid=d4cc7b7e-71d9-4f4d-be1e-cd2dd71ed522&algo_expid=d4cc7b7e-71d9-4f4d-be1e-cd2dd71ed522-2&btsid=9f479f34-2398-411a-a638-03b82ab7107b&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_52)
-* [DHT-22](https://ru.aliexpress.com/item/33052251953.html?spm=a2g0o.productlist.0.0.6a7057e9d2r9lk&algo_pvid=b3d264de-1c69-42ec-8367-d6f398f48aa9&algo_expid=b3d264de-1c69-42ec-8367-d6f398f48aa9-1&btsid=0d424122-1704-4e4b-8880-440eae08cafc&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_52)
+* [DHT-11](https://www.aliexpress.com/item/33005500534.html)
+* [DHT-11 в готовом модуле](https://ru.aliexpress.com/item/1059518033.html)
+* [DHT-22](https://ru.aliexpress.com/item/33052251953.html)
 
 ## Описание датчика
 
@@ -39,7 +39,7 @@
 
 Сопротивление подключенные таким образом называется "подтягивающий" и оно предназначено для выставления определенного состояния 0 или 5. При отсутствии такого резистора схема может подучат наводки и изменять напряжение в большую или меньшую сторону. Из-за этого мы можем получить ошибки в работе нашей системы.
 
-После подключения и соединения всех элементов нужно написать немного кода. 
+После подключения и соединения всех элементов нужно написать немного кода.
 
 ## Написание кода
 

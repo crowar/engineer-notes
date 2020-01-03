@@ -2,9 +2,9 @@
 
 ## Необходимые элементы
 
-* [Мотор](https://www.aliexpress.com/item/33048234286.html?spm=a2g0o.productlist.0.0.1706313bEFiKY0&algo_pvid=54c007ef-a641-4809-ba95-46d308a9e39f&algo_expid=54c007ef-a641-4809-ba95-46d308a9e39f-32&btsid=9385bb50-ea6e-4952-ac8b-993aa1a5f46b&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53) они бывают разные, для примера я взял мотор на 9V
-* Мосфет или иначе говоря, полевой транзистор [IRF520](https://www.aliexpress.com/item/32867857750.html?spm=a2g0o.productlist.0.0.34eb62bbT34faM&algo_pvid=78eae4ef-8055-4d11-883d-6730b15f8411&algo_expid=78eae4ef-8055-4d11-883d-6730b15f8411-0&btsid=69f0d054-d40b-4fcc-8c9a-19b3c38298c1&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
-* Диод [1N4007](https://www.aliexpress.com/item/32224555821.html?spm=a2g0o.productlist.0.0.17d23ea6IzVm6i&algo_pvid=c20e24e1-235b-4822-835e-56c295fc37c6&algo_expid=c20e24e1-235b-4822-835e-56c295fc37c6-0&btsid=cee3e40e-b056-4769-bf5c-e62f9d40cdf7&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
+* [Мотор](https://www.aliexpress.com/item/33048234286.html) они бывают разные, для примера я взял мотор на 9V
+* Мосфет или иначе говоря, полевой транзистор [IRF520](https://www.aliexpress.com/item/32867857750.html)
+* Диод [1N4007](https://www.aliexpress.com/item/32224555821.html)
 
 ## Схема подключения
 

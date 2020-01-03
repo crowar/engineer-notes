@@ -20,8 +20,8 @@
 
 ## Необходимые элементы
 
-* [MicroSD card adapter](https://www.aliexpress.com/item/32583289463.html?spm=a2g0o.productlist.0.0.51b95295Jmd0EN&algo_pvid=2c22e9e3-fa23-458f-b7ac-ca08d2076857&algo_expid=2c22e9e3-fa23-458f-b7ac-ca08d2076857-0&btsid=d9cffbca-1a20-4bfa-800c-f333e732cc90&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
-* Часто MicroSD card adapter встречается на полноценных модулях к примеру на [Ethernet Shield](https://www.aliexpress.com/item/32549379444.html?spm=a2g0o.productlist.0.0.5be657c5xbDozS&algo_pvid=ef36ac77-f20c-4dfd-a8ff-7006a7b71146&algo_expid=ef36ac77-f20c-4dfd-a8ff-7006a7b71146-0&btsid=49ade8a9-c108-418b-99ac-f1acce29f800&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
+* [MicroSD card adapter](https://www.aliexpress.com/item/32583289463.html)
+* Часто MicroSD card adapter встречается на полноценных модулях к примеру на [Ethernet Shield](https://www.aliexpress.com/item/32549379444.html)
 * Либо он уже есть на борту некоторых плат:
   * [Arduino YÚN rev 2](https://store.arduino.cc/usa/arduino-yun-rev-2)
   * [Arduino Ethernet](https://store.arduino.cc/usa/arduino-ethernet-rev3-with-poe)
