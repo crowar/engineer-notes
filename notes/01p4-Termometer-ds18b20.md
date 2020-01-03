@@ -4,7 +4,7 @@
 
 Датчики:
 
-* DS18B20
+* [DS18B20](https://aliexpress.ru/item/32860832147.html)
 
 ## Описание датчика
 

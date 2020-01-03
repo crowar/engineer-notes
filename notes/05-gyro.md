@@ -2,13 +2,13 @@
 
 ## Необходимые элементы
 
-* [MPU-6050](https://www.aliexpress.com/item/32527828492.html?spm=a2g0o.productlist.0.0.5c8158aeH02Ud8&algo_pvid=525e1db3-5957-4685-8253-2697f2c99fb9&algo_expid=525e1db3-5957-4685-8253-2697f2c99fb9-2&btsid=34bf45d6-94d9-43d3-be1a-7bbd677537c9&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53) рабочее напряжение датчика 3 - 5V. Этот датчек может маркироваться как GY-541
+* [MPU-6050](https://www.aliexpress.com/item/32527828492.html) рабочее напряжение датчика 3 - 5V. Этот датчек может маркироваться как GY-541
 * [SparkFun - MPU-6050](https://www.sparkfun.com/products/11028) рабочее напряжение датчика 2.3 - 3.4V
-* [GY-80](https://www.aliexpress.com/item/32787517636.html?spm=a2g0o.productlist.0.0.36c1f412U0pjOR&algo_pvid=80754082-2516-4015-b357-9ac0ca49db45&algo_expid=80754082-2516-4015-b357-9ac0ca49db45-1&btsid=7bd26e62-cc61-490b-bd3b-79f68b444aa1&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53) этот датчик помимо акселерометра и гироскопа на борту имеет компас и датчик давления
-* [GY-LSM6DS3](https://www.aliexpress.com/item/32839272499.html?spm=a2g0o.productlist.0.0.7a7d526bKksDKp&algo_pvid=7b99dda0-8702-438f-a81e-3d4244ba8f8d&algo_expid=7b99dda0-8702-438f-a81e-3d4244ba8f8d-0&btsid=fa635366-eb99-4590-8f1c-f682e25cdebc&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53) датчик ещё может изменять температуру
-* [GY-91](https://www.aliexpress.com/item/33023942649.html?spm=a2g0o.productlist.0.0.6e3c50af2cFyt0&algo_pvid=a39398ef-1f77-453c-bc22-01706a747618&algo_expid=a39398ef-1f77-453c-bc22-01706a747618-8&btsid=d66838c7-1889-4aab-841b-bf3035083a0b&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53) датчик может измерять все. В нем имеется акселерометр, гироском, барометр и термоментр
+* [GY-80](https://www.aliexpress.com/item/32787517636.html) этот датчик помимо акселерометра и гироскопа на борту имеет компас и датчик давления
+* [GY-LSM6DS3](https://www.aliexpress.com/item/32839272499.html) датчик ещё может изменять температуру
+* [GY-91](https://www.aliexpress.com/item/33023942649.html) датчик может измерять все. В нем имеется акселерометр, гироском, барометр и термоментр
 
-> Для желающих собрать какую-то машинку, коптер или ещё какую технику уже есть готовая плата [ArduPilot](https://www.aliexpress.com/item/32891728823.html?spm=a2g0o.productlist.0.0.49141872nzN7lG&algo_pvid=9169bde6-75fe-4bc4-b0cd-e39d9d5e4a1e&algo_expid=9169bde6-75fe-4bc4-b0cd-e39d9d5e4a1e-3&btsid=6e67af78-6da4-480d-88dc-5a0b0e20a218&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53) которая на борту уже имеет гироскоп MPU-6000 и барометр MS5611. Компас и GPS к сожалению отсутствует на данной плате, но их можно подключить при такой необходимости.
+> Для желающих собрать какую-то машинку, коптер или ещё какую технику уже есть готовая плата [ArduPilot](https://www.aliexpress.com/item/32891728823.html) которая на борту уже имеет гироскоп MPU-6000 и барометр MS5611. Компас и GPS к сожалению отсутствует на данной плате, но их можно подключить при такой необходимости.
 
 ## Схема подключения
 

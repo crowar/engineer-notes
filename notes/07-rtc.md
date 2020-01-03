@@ -3,12 +3,12 @@
 ## Необходимые элементв
 
 * Часы реального времени (RTC). Вариаций датчиков очень много
-  * [DS1302](https://ru.aliexpress.com/item/32861729429.html?spm=a2g0o.productlist.0.0.659810f30bYzzQ&algo_pvid=b82460b3-16d0-4455-a473-4eba06cbb1eb&algo_expid=b82460b3-16d0-4455-a473-4eba06cbb1eb-10&btsid=b50b072e-d40c-4eed-98a4-f38b2a3fef68&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
-  * [DS1307](https://ru.aliexpress.com/item/32443265169.html?spm=a2g0o.productlist.0.0.659810f30bYzzQ&algo_pvid=b82460b3-16d0-4455-a473-4eba06cbb1eb&algo_expid=b82460b3-16d0-4455-a473-4eba06cbb1eb-4&btsid=b50b072e-d40c-4eed-98a4-f38b2a3fef68&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
-  * [DS3231](https://ru.aliexpress.com/item/32666603579.html?spm=a2g0o.productlist.0.0.659810f30bYzzQ&algo_pvid=b82460b3-16d0-4455-a473-4eba06cbb1eb&algo_expid=b82460b3-16d0-4455-a473-4eba06cbb1eb-11&btsid=b50b072e-d40c-4eed-98a4-f38b2a3fef68&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
-  * [DS3231](https://ru.aliexpress.com/item/1954150922.html?spm=a2g0o.productlist.0.0.659810f30bYzzQ&algo_pvid=b82460b3-16d0-4455-a473-4eba06cbb1eb&algo_expid=b82460b3-16d0-4455-a473-4eba06cbb1eb-1&btsid=b50b072e-d40c-4eed-98a4-f38b2a3fef68&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53) в компактном корпусе
-  * [Arduino Nano Shield](https://ru.aliexpress.com/item/32845808016.html?spm=a2g0o.productlist.0.0.1f8121c341y8az&algo_pvid=6a5e6847-1839-42d9-8be2-fe82a9cddb21&algo_expid=6a5e6847-1839-42d9-8be2-fe82a9cddb21-17&btsid=0bf0d1d4-3bd1-4037-862a-2d5bb23dcab3&ws_ab_test=searchweb0_0,searchweb201602_8,searchweb201603_53) с датчиком DS1307 и адаптером SD карт
-  * [PCF8523](https://ru.aliexpress.com/item/33014387417.html?spm=a2g0o.productlist.0.0.61fa44228rf0fm&algo_pvid=803e99fe-00f6-4195-af65-f7d12335ee86&algo_expid=803e99fe-00f6-4195-af65-f7d12335ee86-0&btsid=d344e7b9-e99f-485a-8b93-0e06d47ab4bf&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
+  * [DS1302](https://ru.aliexpress.com/item/32861729429.html)
+  * [DS1307](https://ru.aliexpress.com/item/32443265169.html)
+  * [DS3231](https://ru.aliexpress.com/item/32666603579.html)
+  * [DS3231](https://ru.aliexpress.com/item/1954150922.html) в компактном корпусе
+  * [Arduino Nano Shield](https://ru.aliexpress.com/item/32845808016.html) с датчиком DS1307 и адаптером SD карт
+  * [PCF8523](https://ru.aliexpress.com/item/33014387417.html)
 
 Основные отличия этих датчиков: температурный диапазон, скорость отстования, рабочее напряжение. Более детально можно посмотреть в описании чипов: [DS1302](https://datasheets.maximintegrated.com/en/ds/DS1302.pdf), [DS1307](https://datasheets.maximintegrated.com/en/ds/DS1307.pdf), [DS3231](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf). Другие документы найдети самостоятельно
 

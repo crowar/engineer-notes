@@ -2,7 +2,7 @@
 
 ## Нужные элементы
 
-[Фоторезистор](https://www.aliexpress.com/item/32760631393.html?spm=a2g0o.productlist.0.0.50608b3bzZnvQv&algo_pvid=147458d7-f54c-4d3f-aada-89328fbdd09c&algo_expid=147458d7-f54c-4d3f-aada-89328fbdd09c-2&btsid=3404050d-471b-425e-8f21-15e24ba26f88&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
+[Фоторезистор](https://www.aliexpress.com/item/32760631393.html)
 
 ## Схема подключения
 

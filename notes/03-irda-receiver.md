@@ -2,7 +2,7 @@
 
 ## Необходимые элементы
 
-* [Приемник IR сигналов](https://www.aliexpress.com/item/33022813566.html?spm=a2g0o.productlist.0.0.4e0c32e8xl2kvp&algo_pvid=0bbf528b-800f-402e-b288-d14933f857a4&algo_expid=0bbf528b-800f-402e-b288-d14933f857a4-0&btsid=d5651d98-23e9-4d4a-8264-3e4a2de72d5a&ws_ab_test=searchweb0_0,searchweb201602_2,searchweb201603_53)
+* [Приемник IR сигналов](https://www.aliexpress.com/item/33022813566.html)
 
 ## Схема подключения
 
