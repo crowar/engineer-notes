@@ -35,44 +35,44 @@ String formatDateTime(tmElements_t &datetime);
 String formatValue(unsigned int nn);
 
 void setup() {
-Serial.begin(9600);
+    Serial.begin(9600);
 }
 
 void loop() {
-if (RTC.read(datetime)) {
-Serial.println(formatDateTime(datetime));
-} else {
-Serial.println("error");
-}
+    if (RTC.read(datetime)) {
+        Serial.println(formatDateTime(datetime));
+    } else {
+        Serial.println("error");
+    }
 }
 
 String formatDateTime(tmElements_t &datetime){
-String result = "";
+    String result = "";
 
-result += formatValue(datetime.Hour);
-result += ":";
-result += formatValue(datetime.Minute);
-result += ":";
-result += formatValue(datetime.Second);
-result += " ";
-result += formatValue(datetime.Day);
-result += ".";
-result += formatValue(datetime.Month);
-result += ".";
-result += formatValue(tmYearToCalendar(datetime.Year));
+    result += formatValue(datetime.Hour);
+    result += ":";
+    result += formatValue(datetime.Minute);
+    result += ":";
+    result += formatValue(datetime.Second);
+    result += " ";
+    result += formatValue(datetime.Day);
+    result += ".";
+    result += formatValue(datetime.Month);
+    result += ".";
+    result += formatValue(tmYearToCalendar(datetime.Year));
 
-return result;
+    return result;
 }
 
 String formatValue(unsigned int nn) {
-String result = "";
+    String result = "";
 
-if (nn >= 0 && nn < 10)
-result += "0";
+    if (nn >= 0 && nn < 10)
+        result += "0";
 
-result += String(nn);
+    result += String(nn);
 
-return result;
+    return result;
 }
 ```
 
@@ -91,80 +91,80 @@ String formatDateTime(tmElements_t &datetime);
 String formatValue(unsigned int nn);
 
 void setup() {
-Serial.begin(9600);
+    Serial.begin(9600);
 }
 
 void loop() {
-if (strFull) {
-// Порсим строку и вытаемся получить из неё необходимые значения
-dateTime.Hour = dateTimeStr.substring(11,13).toInt();
-dateTime.Minute = dateTimeStr.substring(14,16).toInt();
-dateTime.Second = dateTimeStr.substring(17,19).toInt();
-dateTime.Day = dateTimeStr.substring(0,2).toInt();
-dateTime.Month = dateTimeStr.substring(3,5).toInt();
-dateTime.Year = CalendarYrToTm(dateTimeStr.substring(6,10).toInt());
+    if (strFull) {
+        // Порсим строку и вытаемся получить из неё необходимые значения
+        dateTime.Hour = dateTimeStr.substring(11,13).toInt();
+        dateTime.Minute = dateTimeStr.substring(14,16).toInt();
+        dateTime.Second = dateTimeStr.substring(17,19).toInt();
+        dateTime.Day = dateTimeStr.substring(0,2).toInt();
+        dateTime.Month = dateTimeStr.substring(3,5).toInt();
+        dateTime.Year = CalendarYrToTm(dateTimeStr.substring(6,10).toInt());
 
-// запишем данные в DS3231
-RTC.write(datetime);
+        // запишем данные в DS3231
+        RTC.write(datetime);
 
-// очистить строку
-dateTimeStr = "";
-strFull = false;
-}
+        // очистить строку
+        dateTimeStr = "";
+        strFull = false;
+    }
 
-// получение данных из ds3231
-if (RTC.read(datetime)) {
-Serial.println(formatDateTime(datetime));
-} else {
-Serial.println("error");
-}
+    // получение данных из ds3231
+    if (RTC.read(datetime)) {
+        Serial.println(formatDateTime(datetime));
+    } else {
+        Serial.println("error");
+    }
 
-delay(500);
+    delay(500);
 }
 
 void serialEvent() {
-while (Serial.available()) {
-// получить очередной байт:
-char c = (char)Serial.read();
+    while (Serial.available()) {
+        // получить очередной байт:
+        char c = (char)Serial.read();
 
-// добавить в строку
-dateTimeStr += c;
+        // добавить в строку
+        dateTimeStr += c;
 
-// /n - конец передачи
-if (c == '\n')
-{
-strFull = true;
-}
-}
+        // /n - конец передачи
+        if (c == '\n')
+        {
+            strFull = true;
+        }
+    }
 }
 
 String formatDateTime(tmElements_t &datetime){
-String result = "";
+    String result = "";
 
-result += formatValue(datetime.Hour);
-result += ":";
-result += formatValue(datetime.Minute);
-result += ":";
-result += formatValue(datetime.Second);
-result += " ";
-result += formatValue(datetime.Day);
-result += ".";
-result += formatValue(datetime.Month);
-result += ".";
-result += formatValue(tmYearToCalendar(datetime.Year));
+    result += formatValue(datetime.Hour);
+    result += ":";
+    result += formatValue(datetime.Minute);
+    result += ":";
+    result += formatValue(datetime.Second);
+    result += " ";
+    result += formatValue(datetime.Day);
+    result += ".";
+    result += formatValue(datetime.Month);
+    result += ".";
+    result += formatValue(tmYearToCalendar(datetime.Year));
 
-return result;
+    return result;
 }
 
 String formatValue(unsigned int nn) {
-String result = "";
+    String result = "";
 
-if (nn >= 0 && nn < 10)
-result += "0";
+    if (nn >= 0 && nn < 10)
+        result += "0";
 
-result += String(nn);
+    result += String(nn);
 
-return result;
+    return result;
 }
 ```
 
