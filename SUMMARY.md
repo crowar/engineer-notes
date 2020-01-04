@@ -17,4 +17,5 @@
   * [Сохраним файлы на SD карту](notes/06-sd-card.md)
   * [Часы реального времени](notes/07-rtc.md)
   * [Контроллер ATTINY85](notes/08-attiny85.md)
+  * [Доступ к датчикам через Web](notes/09-web-sensor.md)
 * [Проекты](project/README.md)
