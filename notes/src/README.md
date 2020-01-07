@@ -12,6 +12,12 @@ Arduino Nano 33 BLE Sense
 platformio init --board nano33ble
 ```
 
+ESP 8266
+
+```bash
+platformio init --board esp12e
+```
+
 Вывод доступных платформ
 
 ```bash
