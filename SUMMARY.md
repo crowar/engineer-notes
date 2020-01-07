@@ -9,7 +9,7 @@
   * [Работа с датчиком освещенности](notes/02-light-sensor.md)
     * [Работа с реле](notes/02-relay.md)
     * [Создание удлинителя, который работает только в темноте](notes/02-light-sensor-with-relay.md)
-  * [Перехват кодов с пульта управления](notes/03-irda-receiver.md)
+  * [Перехват кодов с пульта управления (IR)](notes/03-irda-receiver.md)
     * [Передача сигнала](notes/03-irda-transmitter.md)
   * [Серво привод](notes/04-servo.md)
   * [Разбираемся с мотором](notes/04-connect-motor.md)
