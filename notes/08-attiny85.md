@@ -35,7 +35,7 @@ https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/packa
 
 Код ничем не отличается и смело можно переносить проекты на данный чип.
 
-Полная версия кода расположена в директории ```src/08-attiny85```
+Полная версия кода расположена в директории ```notes/src/08-attiny85```
 
 ```cpp
 #include "OneWire.h"
